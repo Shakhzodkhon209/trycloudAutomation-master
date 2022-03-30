@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/cydeo/step_definitions",
         dryRun = false,  //false means it is off will be open
-        tags = "",//@wip(work in progress)
+        tags = "@wip",//@wip(work in progress)
         publish = true
 )
 public class CukesRunner {

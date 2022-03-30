@@ -9,27 +9,24 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 public class LoginStepDefinitions {
-
     LoginPage loginPage=new LoginPage();
     @Given("user on the login page")
     public void user_on_the_login_page() {
-        Driver.getDriver().get("http://qa2.trycloud.net");
+        Driver.getDriver().get("env");
     }
     @When("user use username {string} and password {string}")
     public void user_use_username_and_passcode(String username,String password) {
-       loginPage.inputUsername.sendKeys(username);
-       loginPage.inputPassword.sendKeys(password);
+        loginPage.inputUsername.sendKeys(username);
+        loginPage.inputPassword.sendKeys(password);
     }
     @When("user click the login button")
     public void user_click_the_login_button() {
-      loginPage.clickLoginButton.click();
+        loginPage.clickLoginButton.click();
     }
     @Then("verify the user should be at the {string} page")
     public void verify_the_user_should_be_at_the_dashboard_page(String expected) {
         Assert.assertTrue(Driver.getDriver().getTitle().contains(expected));
     }
-
-
 
 
 
